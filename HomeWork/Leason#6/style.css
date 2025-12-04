@@ -1,0 +1,22 @@
+body {
+    background-color: orange;
+    background-color: orange;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.block {
+  background: rgb(176, 15, 15);
+  border-color: blue;
+  padding: 20px;
+  border-radius: 10px;
+  width: 150px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(205, 22, 22, 0.1);
+}
