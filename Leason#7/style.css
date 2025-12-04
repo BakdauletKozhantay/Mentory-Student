@@ -1,0 +1,120 @@
+/* GRID ПРИМЕР №1 */
+.block {
+  background-color: red;
+  padding: 1rem;
+}
+
+.grid-1 {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  /* grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); */
+  gap: .75rem;
+  margin: 2rem 0;
+}
+
+.block:last-child {
+  background-color: yellow;
+}
+
+.block:nth-child(2) {
+  grid-column: span 2;
+  /* grid-row: span 2; */
+  background-color: green;
+}
+
+/* ====================================================== */
+/* GRID ПРИМЕР №2 */
+
+.grid-2 {
+  display: grid;
+  grid-template-areas:
+    "h h h h h"
+    "s c c c c"
+    "f f f f f";
+}
+
+.header {
+  background-color: #5a5a5a;
+  color: white;
+  padding: 2rem;
+  grid-area: h;
+}
+
+.sidebar {
+  background-color: #688daf;
+  padding: 2rem;
+  grid-area: s;
+}
+
+.content {
+  background-color: #cdcdcd;
+  padding: 2rem;
+  grid-area: c;
+}
+
+.footer {
+  background-color: #1d1d1d;
+  padding: 2rem;
+  color: white;
+  grid-area: f;
+}
+
+
+/* АДАПТИВНОСТЬ DESKTOP FIRST */
+
+/* .news__block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.news__card {
+  padding: 2rem;
+  background-color: #c2c2c2;
+}
+
+@media only screen and (max-width: 768px) {
+  .news__block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news__card {
+    padding: 1.25rem;
+    background-color: #9badde;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .news__block {
+    grid-template-columns: repeat(1, 1fr);
+  }
+} */
+
+
+/* АДАПТИВНОСТЬ MOBILE FIRST */
+
+.news__block {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.news__card {
+  padding: 1.25rem;
+  background-color: #c2c2c2;
+}
+
+@media only screen and (min-width: 512px) {
+  .news__block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .news__block {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .news__card {
+    padding: 2rem;
+  }
+}

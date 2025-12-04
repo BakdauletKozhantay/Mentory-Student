@@ -1,0 +1,75 @@
+@import url(./reset.css);
+@import url(./components/button.css);
+@import url(./components/news-card.css);
+
+
+
+.test__main {}
+
+.test {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.test-1 {
+  background-color: red;
+}
+
+.test-2 {
+  background-color: green;
+}
+
+.test-3 {
+  background-color: blue;
+}
+
+.test-4 {
+  background-color: orange;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 5px;
+  background-color: #ae45456e;
+  backdrop-filter: blur(5px);
+  z-index: 50;
+}
+
+nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+main {
+  padding-top: 100px;
+  height: 500vh;
+}
+
+img {
+  filter: brightness(50%) blur(1px);
+}
+
+.sticky_container {
+  width: 75%;
+  height: 200vh;
+  background-color: #aeaeae;
+  overflow-y: auto;
+}
+
+.sticky_element {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(255, 0, 208);
+}

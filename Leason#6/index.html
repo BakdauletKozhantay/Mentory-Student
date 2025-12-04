@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson #6</title>
+
+  <style>
+    :root {
+      --primary: rgb(230, 137, 44);
+      --round-xl: 1rem;
+    }
+
+    .test {
+      height: 100px;
+      background-color: var(--primary);
+      border-radius: var(--round-xl);
+    }
+
+    .test-2 {
+      height: 100px;
+      background-color: var(--primary);
+      border-radius: var(--round-xl);
+    }
+
+    .bell__bottom {
+      animation: belling 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes belling {
+      from {
+        transform: translateX(-5px);
+      }
+
+      to {
+        transform: translateX(5px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lesson #6</h1>
+
+  <div>
+    <a href="./pages/bootstrap.html">Bootstrap</a>
+    <a href="./pages/tailwind.html">Tailwind CSS</a>
+  </div>
+
+  <hr>
+
+  <img src="./assets/icons/bell.svg" alt="">
+
+  <div class="test"></div>
+  <div class="test-2"></div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell">
+    <path class="bell__bottom" d="M10.268 21a2 2 0 0 0 3.464 0" />
+    <path
+      d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+  </svg>
+</body>
+
+</html>

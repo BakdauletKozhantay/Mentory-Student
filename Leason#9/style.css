@@ -1,0 +1,102 @@
+:root {
+  --background-gradient-color: #230235, #12021b;
+  --primary-color: 96, 22, 152;
+  --background-color: 14, 14, 14;
+  --foreground-color: 233, 233, 233;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+::selection {
+  background-color: rgb(var(--primary-color));
+}
+
+.lesson__title {
+  text-align: center;
+}
+
+.screen__wrapper {
+  background: linear-gradient(var(--background-gradient-color));
+  color: rgb(var(--foreground-color));
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem .15rem;
+  overflow: hidden;
+}
+
+.prediction__card {
+  width: 95%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(var(--background-color), 0.75);
+  backdrop-filter: blur(.5rem);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(var(--primary-color), .5);
+  box-shadow: 0 0 1rem .1rem rgba(var(--primary-color), .33);
+  transition: box-shadow .33s ease-in-out;
+  animation: fade-in-bottom 1s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 .75rem .1rem rgba(var(--primary-color), .5);
+    border: 1px solid rgba(var(--primary-color), .75);
+  }
+
+  .prediction__card__title {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .prediction__text {
+    text-align: center;
+    animation: fade-in 1s ease-in-out;
+  }
+
+  .get__prediction {
+    padding: .5rem 1rem;
+    background-color: rgba(var(--primary-color), .80);
+    color: rgb(var(--foreground-color));
+    border: none;
+    outline: none;
+    border-radius: .25rem;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background .33s ease-in-out, scale .33s ease-in-out;
+
+    &:hover {
+      background-color: rgba(var(--primary-color), 1);
+    }
+
+    &:active {
+      scale: .95;
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}

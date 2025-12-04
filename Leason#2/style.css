@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img_wrapper {
+  width: 350px;
+  height: 200px;
+  overflow: hidden;
+  margin: 50px 0;
+}
+
+.img_wrapper .img {
+  width: 100%;
+  height: 100%;
+  transition: transform .5s ease-in-out;
+}
+
+.img_wrapper:hover .img {
+  transform: scale(110%);
+}
+
+.loader {
+  border: 15px red solid;
+  border-bottom-color: transparent;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.test {
+  width: 400px;
+  height: 100px;
+  background: #6d6d6d;
+  border: 5px solid red;
+  padding: 25px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.test2 {
+  width: 500px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.error-paragraph {
+  color: red;
+}
+
+.primary-paragrph {
+  color: blue;
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  color: #fff;
+  /* background: linear-gradient(-45deg, #f09, #08f5fd); */
+  background-color: #f09;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* margin: 5px; */
+  transition: border-radius .2s, background-color .2s;
+}
+
+.btn:hover {
+  border-radius: 10px;
+  background-color: rgb(234, 0, 255);
+  transition: border-radius .5s, background-color 2s;
+}
+
+.btn:active {
+  background-color: #000;
+}
+
+
+
+
+.father .child {
+  color: #f09;
+}
+
+.mother .child {
+  color: hsl(237, 100%, 50%);
+}
+
+
+.card {}
+
+.card .title {}
+
+.card .price {}
+
+
+.shop__card {}
+
+.payment__card {}
+
+.shop__card .card__price {}
