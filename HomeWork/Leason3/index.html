@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VS Code — Keyboard Shortcuts Poster</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --muted:#777;
+      --accent:#0e6fff;
+      --title:#111;
+      --card-bg:#f8f9fb;
+      --grid-gap:20px;
+      font-family: Inter, Roboto, "Segoe UI", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--title)}
+    .container{
+      max-width:1100px;margin:24px auto;padding:28px;display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start;
+      border-radius:10px;
+    }
+    /* Left column (logo + general + basic editing) */
+    .left{
+      padding:18px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:8px;border:1px solid #e6e9ef;
+    }
+    header.logo{
+      display:flex;align-items:center;gap:12px;margin-bottom:12px;
+    }
+    .logo img{width:56px;height:56px}
+    .logo h1{font-size:20px;margin:0}
+    .subtitle{font-size:12px;color:var(--muted)}
+
+    .section{margin-top:14px}
+    .section h2{font-size:14px;margin:6px 0;color:#0b212f}
+    .list{display:grid;grid-template-columns:1fr;gap:6px}
+    .item{display:flex;justify-content:space-between;padding:6px 8px;border-radius:6px;background:var(--card-bg);font-size:13px}
+    .k{font-family:monospace;background:#fff;padding:4px 6px;border-radius:4px;border:1px solid #e3e6eb}
+
+    /* Right column - a multi-column poster grid */
+    .right{
+      padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:8px;border:1px solid #e6e9ef;
+    }
+    .card{background:transparent}
+    .card h3{font-size:13px;margin:0 0 8px 0;color:#0b4db1}
+    .shortcut{display:flex;justify-content:space-between;padding:6px;border-radius:6px;background:rgba(14,111,255,0.04);font-size:13px}
+
+    /* Footer small print */
+    footer{grid-column:1/-1;margin-top:18px;font-size:12px;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .container{grid-template-columns:1fr;max-width:900px}
+      .right{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      .right{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="left">
+      <header class="logo">
+        <div class="logo"><svg width="56" height="56" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="240" height="240" rx="36" fill="#0e6fff"/><path d="M67 74h22v92H67z" fill="#fff" opacity=".9"/><path d="M111 64h54v20h-54z" fill="#fff" opacity=".95"/></svg></div>
+        <div>
+          <h1>Visual Studio Code</h1>
+          <div class="subtitle">Keyboard shortcuts for Windows</div>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>General</h2>
+        <div class="list">
+          <div class="item"><div>Show Command Palette</div><div class="k">Ctrl+Shift+P, F1</div></div>
+          <div class="item"><div>Quick Open, Go to File...</div><div class="k">Ctrl+P</div></div>
+          <div class="item"><div>New window/instance</div><div class="k">Ctrl+Shift+N</div></div>
+          <div class="item"><div>Close window/instance</div><div class="k">Ctrl+Shift+W</div></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Basic editing</h2>
+        <div class="list">
+          <div class="item"><div>Cut line (empty selection)</div><div class="k">Ctrl+X</div></div>
+          <div class="item"><div>Copy line (empty selection)</div><div class="k">Ctrl+C</div></div>
+          <div class="item"><div>Move line up/down</div><div class="k">Alt+↑ / Alt+↓</div></div>
+          <div class="item"><div>Undo / Redo</div><div class="k">Ctrl+Z / Ctrl+Y</div></div>
+          <div class="item"><div>Find</div><div class="k">Ctrl+F</div></div>
+        </div>
+      </section>
+    </aside>
+
+    <main class="right">
+      <div class="card">
+        <h3>Search and replace</h3>
+        <div class="shortcut"><div>Find</div><div class="k">Ctrl+F</div></div>
+        <div class="shortcut"><div>Replace</div><div class="k">Ctrl+H</div></div>
+        <div class="shortcut"><div>Find next/previous</div><div class="k">F3 / Shift+F3</div></div>
+        <div class="shortcut"><div>Select all occurrences of Find match</div><div class="k">Alt+Enter</div></div>
+      </div>
+
+      <div class="card">
+        <h3>Multi-cursor and selection</h3>
+        <div class="shortcut"><div>Insert cursor</div><div class="k">Alt+Click</div></div>
+        <div class="shortcut"><div>Insert cursor above / below</div><div class="k">Ctrl+Alt+↑ / ↓</div></div>
+        <div class="shortcut"><div>Select current line</div><div class="k">Ctrl+L</div></div>
+        <div class="shortcut"><div>Select all occurrences of current selection</div><div class="k">Ctrl+F2</div></div>
+      </div>
+
+      <div class="card">
+        <h3>File management</h3>
+        <div class="shortcut"><div>New File</div><div class="k">Ctrl+N</div></div>
+        <div class="shortcut"><div>Open File...</div><div class="k">Ctrl+O</div></div>
+        <div class="shortcut"><div>Save</div><div class="k">Ctrl+S</div></div>
+        <div class="shortcut"><div>Save As...</div><div class="k">Ctrl+Shift+S</div></div>
+      </div>
+
+      <div class="card">
+        <h3>Display</h3>
+        <div class="shortcut"><div>Toggle full screen</div><div class="k">F11</div></div>
+        <div class="shortcut"><div>Toggle sidebar visibility</div><div class="k">Ctrl+B</div></div>
+        <div class="shortcut"><div>Show Explorer / Toggle focus</div><div class="k">Ctrl+Shift+E</div></div>
+        <div class="shortcut"><div>Show Search</div><div class="k">Ctrl+Shift+F</div></div>
+      </div>
+
+      <div class="card">
+        <h3>Debug</h3>
+        <div class="shortcut"><div>Toggle breakpoint</div><div class="k">F9</div></div>
+        <div class="shortcut"><div>Start / Continue</div><div class="k">F5</div></div>
+        <div class="shortcut"><div>Step over</div><div class="k">F10</div></div>
+        <div class="shortcut"><div>Stop</div><div class="k">Shift+F5</div></div>
+      </div>
+
+      <div class="card">
+        <h3>Integrated terminal</h3>
+        <div class="shortcut"><div>Show integrated terminal</div><div class="k">Ctrl+`</div></div>
+        <div class="shortcut"><div>Create new terminal</div><div class="k">Ctrl+Shift+`</div></div>
+        <div class="shortcut"><div>Copy selection</div><div class="k">Ctrl+Shift+C</div></div>
+        <div class="shortcut"><div>Paste into active terminal</div><div class="k">Ctrl+V</div></div>
+      </div>
+
+      <footer>Other operating systems' keyboard shortcuts and additional unassigned shortcuts available at aka.ms/vscodekeybindings</footer>
+    </main>
+  </div>
+</body>
+</html>
