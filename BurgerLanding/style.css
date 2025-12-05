@@ -535,8 +535,36 @@ img {
     margin-left: 7px;
 }
 
+.burger {
+    display: none;
+    width: 30px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
 
+.burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s ease;
+    transform-origin: center; 
+}
 
+.burger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
 
 @media (max-width: 1100px) {
     .welcome__desk {
@@ -581,4 +609,25 @@ img {
     .footer__list {
         gap: 20px;
     }
+    
+    .burger{
+        display: flex;
+    }
+    
+    .header__nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #312F30;
+        width: 250px;
+        padding: 20px;
+        transform: translateX(110%);
+        transition: 0.4s;
+    }
+
+    .header__nav.open{
+        transform: translateX(0);
+    }
+
 }
+
