@@ -89,10 +89,13 @@ img {
 }
 
 .header {
+   position: fixed;        /* фиксируем */
+    top: 0;
+    left: 0;
+    width: 100%;            /* растягиваем на всю ширину */
     padding: 25px 0;
-    position: relative;
-    z-index: 10;
-    
+    background-color: #1c1c1c;  /* ОБЯЗАТЕЛЬНО! */
+    z-index: 1000;
 }
 
 .header .container {
@@ -105,8 +108,57 @@ img {
 
 }
 .header__nav {
-   
+    position: static;
+    transform: none;
+    opacity: 1;
+    background: none;
+    width: auto;
+    padding: 0;
 }
+
+.header__nav.open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.header__list li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: 0.3s ease;
+}
+
+.header__nav.open .header__list li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.header__nav.open .header__list li:nth-child(1) { transition-delay: 0.1s; }
+.header__nav.open .header__list li:nth-child(2) { transition-delay: 0.2s; }
+.header__nav.open .header__list li:nth-child(3) { transition-delay: 0.3s; }
+.header__nav.open .header__list li:nth-child(4) { transition-delay: 0.4s; }
+.header__nav.open .header__list li:nth-child(5) { transition-delay: 0.5s; }
+
+.header__nav a {
+    position: relative;
+}
+
+.header__nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #f6762c;
+    transition: width 0.3s;
+}
+
+.header__nav a:hover::after {
+    width: 100%;
+}
+
+
+
 .header__list {
     display: flex;
     gap: 30px;
@@ -546,9 +598,9 @@ img {
 
 .burger span {
     display: block;
-    height: 3px;
+    height: 2px;
     width: 100%;
-    background: #fff;
+    background: #f6762c;
     border-radius: 2px;
     transition: 0.3s ease;
     transform-origin: center; 
@@ -584,6 +636,12 @@ img {
         margin-right: auto;
     }
 }
+@media (min-width: 851px) {
+    .header__list li {
+        opacity: 1;
+        transform: none;
+    }
+}
 
 @media (max-width: 850px) {
     .footer .container {
@@ -615,19 +673,24 @@ img {
     }
     
     .header__nav {
-        position: absolute;
+       position: absolute;
         top: 100%;
         right: 0;
         background-color: #312F30;
         width: 250px;
         padding: 20px;
         transform: translateX(110%);
-        transition: 0.4s;
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.3s ease;
     }
 
     .header__nav.open{
         transform: translateX(0);
+        opacity: 1;
     }
-
+    .header__list {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
