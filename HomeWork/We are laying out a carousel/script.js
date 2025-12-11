@@ -23,7 +23,7 @@ const swiperTestimonials = new Swiper('.mySwiper', {
   }
 });
 
-const swiperCards = new Swiper('.swiper', {
+const swiperCards = new Swiper('.cardsSwiper', {  // ← ВАЖНО!
   slidesPerView: 3,
   spaceBetween: 20,
   pagination: {

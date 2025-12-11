@@ -73,21 +73,13 @@ body {
   margin-bottom: 15px;
 }
 
-.card-header img {
+.card-header img,
+.avatar {
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  object-fit: cover;
   margin-right: 12px;
-}
-
-.card-header .info h3 {
-  font-size: 16px;
-  margin-bottom: 3px;
-}
-
-.card-header .info span {
-  font-size: 14px;
-  color: #777;
 }
 
 /* Текст */
@@ -114,9 +106,38 @@ body {
   transition: 0.3s;
 }
 
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
+/* ====================
+   АДАПТИВНОСТЬ
+==================== */
+
+@media (max-width: 768px) {
+  .card {
+    width: 280px;
+    padding: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+    padding: 18px;
+  }
+
+  .card-header img,
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .section-title h2 {
+    font-size: 22px;
+  }
+
+  .section-title p {
+    font-size: 14px;
+  }
 }
