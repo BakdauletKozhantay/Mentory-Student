@@ -110,7 +110,7 @@ function manualFindIndex(arr, value) {
   return undefined;
 }
 
-/* ====== Примеры / Тесты (можешь раскомментировать при запуске) ====== */
+/* ====== Примеры / Тесты */
 
 // console.log('swapArithmetic', swapArithmetic(3,5)); // [5,3]
 // console.log('swapXor', swapXor(3,5)); // [5,3]
