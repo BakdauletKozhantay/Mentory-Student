@@ -1,33 +1,53 @@
-// Открытие модалки (все кнопки с классом .open-modal)
-const modalOpenBtns = document.querySelectorAll('.open-modal');
+const openBtn = document.querySelector(".open-modal");
+const modalOverlay = document.getElementById("modalOverlay");
+const closeBtn = document.getElementById("closeBtn");
 
-// Закрытие модалки по кнопке
-const closeBtn = document.getElementById('closeBtn');
-
-// Элементы модалки
-const modalOverlay = document.getElementById('modalOverlay');
-const modalWindow = document.querySelector('.modal-window');
-
-// Функции открытия/закрытия модалки
-function openModal() {
-  modalOverlay.style.display = 'block';
-}
-
-function closeModal() {
-  modalOverlay.style.display = 'none';
-}
-
-// Вешаем событие на все кнопки открытия
-modalOpenBtns.forEach(btn => {
-  btn.addEventListener('click', openModal);
+openBtn.addEventListener("click", () => {
+  modalOverlay.style.display = "block";
 });
 
-// Закрытие по кнопке
-closeBtn.addEventListener('click', closeModal);
+closeBtn.addEventListener("click", () => {
+  modalOverlay.style.display = "none";
+});
 
-// Закрытие по клику по оверлею
-modalOverlay.addEventListener('click', (event) => {
+modalOverlay.addEventListener("click", (event) => {
   if (event.target === modalOverlay) {
-    closeModal();
+    modalOverlay.style.display = "none";
   }
 });
+
+
+// --- АККОРДИОН ---
+// Находим все заголовки аккордионов
+const accordionHeaders = document.querySelectorAll(".accordion__header");
+
+accordionHeaders.forEach(header => {
+  header.addEventListener("click", () => {
+    const block = header.parentElement;     // .accordion__block
+    const state = block.getAttribute("accordion-state");
+
+    // Если открыт → закрываем
+    if (state === "open") {
+      block.setAttribute("accordion-state", "closed");
+    }
+    // Если закрыт → открываем
+    else {
+      block.setAttribute("accordion-state", "open");
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+console.log("JS работает!");
+
+console.log("openBtn:", document.querySelector(".open-modal"));
+console.log("modalOverlay:", document.getElementById("modalOverlay"));
+console.log("closeBtn:", document.getElementById("closeBtn"));
