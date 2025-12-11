@@ -39,9 +39,9 @@
   background: rgba(0,0,0,0.6);
   display: none; 
 
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 /* окно */
