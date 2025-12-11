@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Lesson #10</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Lesson #10</h1>
+
+    <!-- Кнопка открытия модалки -->
+    <button class="main__btn open-modal">Модальное окно</button>
+
+    <div class="accordion__container">
+      <div class="accordion__block" accordion-id="1" accordion-state="open">
+        <div class="accordion__header">
+          <p>Заголовок аккордиона №1</p>
+          <img src="./assets/icons/chevrone.svg">
+        </div>
+        <div class="accordion__content">
+          <p>Контент аккордиона №1</p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit...
+        </div>
+      </div>
+
+      <div class="accordion__block" accordion-id="2" accordion-state="closed">
+        <div class="accordion__header">
+          <p>Заголовок аккордиона №2</p>
+          <img src="./assets/icons/chevrone.svg">
+        </div>
+        <div class="accordion__content">
+          <p>Контент аккордиона №2</p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        </div>
+      </div>
+
+      <div class="accordion__block" accordion-id="3" accordion-state="closed">
+        <div class="accordion__header">
+          <p>Заголовок аккордиона №3</p>
+          <img src="./assets/icons/chevrone.svg">
+        </div>
+        <div class="accordion__content">
+          <p>Контент аккордиона №3</p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модалка (единственная и правильная) -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-window">
+      Пол Уокер (Paul Walker, 1973–2013) — американский актёр, наиболее
+      известный по роли Брайана О’Коннора во франшизе «Форсаж».
+      <br><br>
+      <button id="closeBtn">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
