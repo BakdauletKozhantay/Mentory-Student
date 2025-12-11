@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Testimonials — Swiper Carousel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="testimonials section">
+      <div class="container">
+        <h2 class="section-title">What our clients say</h2>
+
+        <!-- decorative circles -->
+        <div class="decor decor--left"></div>
+        <div class="decor decor--right"></div>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+           
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="quote-mark">“</div>
+                <p class="card-text">"If one day the speed kills me, do not cry because I was smiling"</p>
+                <div class="card-footer">
+                  <img class="avatar" src="./accept/Elizabeth.png" alt="Paul Walker">
+                  <div class="meta">
+                    <div class="name">Paul Walker</div>
+                    <div class="role">American actor</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="quote-mark">“</div>
+                <p class="card-text">"The most important thing in life will always be family. The people right here, 
+                    right now" and "It don't matter if you win by an inch or a mile. Winning's winning,"</p>
+                <div class="card-footer">
+                  <img class="avatar" src="./accept/Emely Jeff.png" alt="Vin Diesel">
+                  <div class="meta">
+                    <div class="name">Vin Diesel</div>
+                    <div class="role">American actor and Director</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <article class="card">
+                <div class="quote-mark">“</div>
+                <p class="card-text">Professional and friendly — fast delivery and great attention to detail.</p>
+                <div class="card-footer">
+                  <img class="avatar1" src="./accept/Hamza Malik.png alt="Sofia Carter">
+                  <div class="meta">
+                    <div class="name">Sofia Carter</div>
+                    <div class="role">Designer</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Add more slides as needed -->
+          </div>
+
+          <!-- pagination (bullets) -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
