@@ -7,6 +7,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.accordion__container {
+  margin: 2rem 0;
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
@@ -19,52 +23,53 @@
   background-color: #2d6cca;
   color: #fff;
   border-radius: 1rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: #4480d9;
+  }
 }
 
-.main__btn:hover {
-  background-color: #4480d9;
-}
-
-/* -------------------- МОДАЛКА -------------------- */
-
-/* затемнение */
-.modal-overlay {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none; 
-
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  right: 0;
+  bottom: 0;
+  background-color: #00000096;
+  backdrop-filter: blur(0.25rem);
+  display: none;
 }
 
-/* окно */
-.modal-window {
-  background: #fff;
-  padding: 20px;
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+.modal__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 1rem);
+  max-width: 900px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  user-select: none;
 }
 
-/* -------------------- АККОРДИОН -------------------- */
+.modal.open {
+  display: block;
+}
 
 .accordion__block {
   border: 1px #000 solid;
 }
 
 .accordion__block:first-child {
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .accordion__block:last-child {
-  border-radius: 0 0 .5rem .5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .accordion__header {
@@ -72,15 +77,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .25rem .5rem;
-}
+  padding: 0.25rem 0.5rem;
 
-.accordion__header:hover {
-  background-color: #cecece;
+  &:hover {
+    background-color: #cecece;
+  }
 }
 
 .accordion__content {
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .accordion__block[accordion-state="open"] .accordion__header {
@@ -89,4 +94,12 @@
 
 .accordion__block[accordion-state="closed"] .accordion__content {
   display: none;
+}
+
+.accordion__header img {
+  transition: all 0.33s ease-in-out;
+}
+
+.accordion__block[accordion-state="open"] .accordion__header img {
+  rotate: 180deg;
 }
