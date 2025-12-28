@@ -627,6 +627,7 @@ img {
 @media (max-width: 950px) {
     .order .container {
         flex-direction: column;
+        padding-right: 0;
     }
     .order__text {
         text-align: center;
@@ -644,28 +645,42 @@ img {
 }
 
 @media (max-width: 850px) {
+
+    .footer__list .container{
+        justify-content: space-evenly;
+    }
+
     .footer .container {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-template-areas: "contacts socials"
-                                "nav nav";
+        grid-template-areas: "nav nav" 
+                             "contacts socials";
         justify-items: center;
-        gap: 20px;
+        gap: 40px 150px;
     }
     .footer__contacts{
         grid-area: contacts ;
+        justify-self: end;
     }
     .footer__nav {
         grid-area: nav ;
-
     }
     .footer__socials {
         grid-area: socials ;
         align-self: center;
+        justify-self: start;
     }
 
     .footer__list {
-        gap: 20px;
+        gap: 80px;
+    }
+
+    .feedback {
+        padding-bottom: 100px;
+    }
+
+    .footer {
+        padding: 50px 0;
     }
     
     .burger{
@@ -694,3 +709,70 @@ img {
     }
 }
 
+@media (min-width: 650px) {
+    .header .container{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header__list {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .header .btn {
+        display: none;
+    }
+}
+
+@media (min-width: 460px) {
+    .footer .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "contacts socials"
+                                "nav nav";
+        justify-items: center;
+        gap: 10px;
+    }
+    .footer__contacts{
+        grid-area: contacts ;
+    }
+    .footer__nav {
+        grid-area: nav ;
+
+    }
+    .footer__socials {
+        grid-area: socials ;
+        align-self: center;
+    }
+
+    .footer__list {
+        gap: 10px;
+    }
+    
+    .burger{
+        display: flex;
+    }
+    
+    .header__nav {
+       position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #312F30;
+        width: 150px;
+        padding: 10px;
+        transform: translateX(110%);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .header__nav.open{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .header__list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
