@@ -45,7 +45,7 @@ body {
   background-color: #00000096;
   backdrop-filter: blur(0.25rem);
   display: none;
-  background-color: red;
+  /* background-color: ; */
 }
 
 .modal__content {
@@ -111,3 +111,4 @@ body {
 .accordion__block[accordion-state="open"] .accordion__header img {
   rotate: 180deg;
 }
+
