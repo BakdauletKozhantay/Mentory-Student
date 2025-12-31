@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+}
+
+:root {
+  --gap: 0.75rem;
+}
+
+.list {
+  columns: 300px;
+  column-gap: var(--gap);
+  padding: calc(var(--gap) / 1.25);
+}
+
+.item {
+  margin-bottom: var(--gap);
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
