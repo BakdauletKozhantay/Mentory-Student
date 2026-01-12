@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BurgerKing</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 
 <body>
@@ -44,18 +45,18 @@
 
             <div class="container">
                 <div class="welcome__inner-wrapper">
-                    <h4 class="welcome__subtitle">
+                    <h4 class="welcome__subtitle" data-aos="fade-down">
                         FAST FOOD BURGERS
                     </h4>
-                    <h1 class="welcome__title">
+                   <h1 class="welcome__title" data-aos="fade-up">
                         The fastest food, for instant hunger.
                     </h1>
-                    <p class="welcome__desk">
+                    <p class="welcome__desk" data-aos="fade-up" data-aos-delay="200">
                         Some food has looked so awful that it's looked like something that the dog's brought home, yet
                         after one mouthful I've been left eating my thoughts, my words & my food and gone back for
                         seconds.
                     </p>
-                    <a href="#!" class="btn">Order now</a>
+                    <a href="#!" class="btn" data-aos="zoom-in" data-aos-delay="400">Order now</a>
                 </div>
             </div>
 
@@ -230,10 +231,22 @@
     </main>
 
     <script src="./style.js"></script>
+<<<<<<< HEAD
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+=======
+    
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+>>>>>>> c84bbeb (Добавил АОС в Бургер лэндинг)
 </body>
 
 </html>
