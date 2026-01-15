@@ -10,6 +10,7 @@ body {
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
+  padding-top: 80px; /* чтобы контент не залезал под fixed header */
 }
 
 .container {
@@ -27,7 +28,7 @@ body {
   z-index: 999;
   background-color: #121517;
   color: #fff;
-  padding: 20px 0;
+  padding: calc(20px + env(safe-area-inset-top)) 0 20px;
 }
 
 .header__container {
@@ -205,35 +206,146 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .booking__form {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  /* max-width: 600px; */
+  margin-top: 24px;
+  margin: 24px auto 0;
+  width: 100%;
+  max-width: 720px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.booking__form input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.booking__form input::placeholder {
+  color: #999;
+}
+
+.booking__form input::focus {
+  outline: none;
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
+}
+
+.booking__form .btn {
+    grid-column: 1 / -1;
+  justify-self: center;
+  width: 240px;
+  padding: 14px 0;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0 6px 16px rgba(243,156,18,0.4);
+}
+
+.booking__form .btn:hover {
+  transform: translateY(-1px);
+}
+
+/* ===== ИКОНКИ В ИНПУТАХ ===== */
+
+.input-icon {
+  position: relative;
   width: 100%;
 }
 
+/* сама иконка */
+.input-icon::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: #999;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* конкретные иконки */
+.input-icon.user::before {
+  content: "👤";
+}
+
+.input-icon.phone::before {
+  content: "📞";
+}
+
+.input-icon.car::before {
+  content: "🚗";
+}
+
+.input-icon.model::before {
+  content: "🧩";
+}
+
+.input-icon.year::before {
+  content: "📅";
+}
+
+/* отступ слева, чтобы текст не наезжал */
+.input-icon input {
+  padding-left: 44px !important;
+}
+
+/* подсветка иконки при фокусе */
+.input-icon:focus-within::before {
+  color: #f39c12;
+}
+
+
 /* Адаптив */
 @media (max-width: 768px) {
+  
+  body {
+    padding-top: 60px;
+  }
+
+   section {
+    scroll-margin-top: 60px;
+}
+  .header {
+    padding: calc(12px + env(safe-area-inset-top)) 0 12px;
+  }
+
   .header__container {
-    flex-direction: column;
-  }
-
-  .header__list {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  .header__list li {
-    margin: 10px 0;
-  }
-
-  .services__grid {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
+
+  .header__nav {
+    display: none;
+  }
+
+    .booking__form {
+    grid-template-columns: 1fr; /* всё в столбик */
+  }
+
+  .booking__form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .booking__form .btn {
+    width: 100%;
+  }
+
 }
+

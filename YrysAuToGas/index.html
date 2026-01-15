@@ -75,27 +75,41 @@
   
 </section>
 
-<form
-  class="booking__form"
-  action="https://formsubmit.co/mr.baha_1995@mail.ru"
-  method="POST"
->
-  <!-- настройки formsubmit -->
-  <input type="hidden" name="_subject" value="Новая заявка с сайта YrysAutoGas">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="thanks.html">
 
-  <!-- поля формы -->
-  <input type="text" name="name" placeholder="Ваше имя" required>
-  <input type="tel" name="phone" placeholder="Телефон" required>
-  <input type="text" name="car" placeholder="Марка автомобиля" required>
-  <input type="text" name="model" placeholder="Модель авто" required>
-  <input type="text" name="year" placeholder="Год авто" required>
+<section id="booking" class="booking" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section__title">Записаться на установку</h2>
 
-  <button type="submit" class="btn">Записаться</button>
-</form>
+    <form class="booking__form" action="https://formsubmit.co/mr.baha_1995@mail.ru" method="POST">
+      <input type="hidden" name="_subject" value="Новая заявка с сайта YrysAutoGas">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/YrysAuToGas/thanks.html">
 
+      <div class="input-icon user">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+      </div>
+
+      <div class="input-icon phone">
+        <input type="tel" name="phone" placeholder="Телефон" required>
+      </div>
+
+      <div class="input-icon car">
+        <input type="text" name="car" placeholder="Марка автомобиля" required>
+      </div>
+
+      <div class="input-icon model">
+        <input type="text" name="model" placeholder="Модель авто" required>
+      </div>
+
+      <div class="input-icon year">
+        <input type="text" name="year" placeholder="Год авто" required>
+      </div>
+
+      <button type="submit" class="btn">Записаться</button>
+    </form>
+  </div>
+</section>
 
 
 
