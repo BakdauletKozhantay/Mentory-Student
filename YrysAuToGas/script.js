@@ -1,36 +1,22 @@
-document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    const target = e.target.getAttribute('href');
-    if (target.startsWith('#')) {
-      e.preventDefault();
-      document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-    }
+// Плавный скролл по всем якорям
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const targetId = link.getAttribute('href');
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
 console.log("Скрипт подключен!");
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const target = document.querySelector(targetId);
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
+// Хедер при скролле
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) { // если прокрутили больше 50px
-    header.classList.add('header--scrolled'); // добавляем класс
-  } else {
-    header.classList.remove('header--scrolled'); // убираем класс
-  }
+  if (!header) return;
+  header.classList.toggle('header--scrolled', window.scrollY > 50);
 });
