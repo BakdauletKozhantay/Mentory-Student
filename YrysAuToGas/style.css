@@ -7,10 +7,13 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  padding-top: 80px;
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(243,156,18,0.18), transparent 55%),
+    radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,0.14), transparent 55%),
+    linear-gradient(180deg, #f7f7f7, #f2f2f2);
   color: #333;
   line-height: 1.6;
-  padding-top: 80px; /* чтобы контент не залезал под fixed header */
 }
 
 .container {
@@ -85,6 +88,7 @@ body {
     width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.5);
     z-index: 0;
+    pointer-events: none;
 }
 
 .hero__container {
@@ -117,6 +121,128 @@ body {
   background-color: #e67e22;
 }
 
+/* WAtsapp */
+
+.about__actions{
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.wa-inline{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.28);
+}
+
+.wa-inline__icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.18);
+}
+
+/* 2гис */
+
+.btn-2gis{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding: 12px 18px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #e9fff2, #d1fae5);
+  border: 1px solid #22c55e;
+  color:#14532d;
+  font-weight: 800;
+  text-decoration:none;
+
+  box-shadow: 0 8px 18px rgba(34,197,94,0.25);
+}
+
+.btn-2gis-line{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 18px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(34,197,94,0.25);
+  backdrop-filter: blur(6px);
+
+  text-decoration: none;
+  color: #111;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.gis-logo{
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: grid;
+  place-items: center;
+}
+
+.gis-logo svg{
+  width: 46px;
+  height: 46px;
+  display: block;
+}
+
+.gis-text{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.gis-text strong{
+  font-size: 1.1rem;
+}
+
+.gis-sub{
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #333;
+  opacity: 0.9;
+}
+
+.btn-2gis-line:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+}
+
+.btn-2gis__icon{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.btn-2gis__icon svg{
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
 /* Секции */
 .section__title {
   font-size: 2rem;
@@ -126,6 +252,8 @@ body {
 
 section {
   scroll-margin-top: 80px; /* высота header */
+
+  background: transparent;
 }
 
 /* Услуги */
@@ -238,7 +366,7 @@ section {
   color: #999;
 }
 
-.booking__form input::focus {
+.booking__form input:focus {
   outline: none;
   border-color: #f39c12;
   box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
@@ -345,6 +473,22 @@ section {
 
   .booking__form .btn {
     width: 100%;
+  }
+
+  .wa-float__text { 
+    display: none;
+   }
+
+
+  .wa-float{padding: 12px;
+  }
+
+  .btn-2gis-line{
+    width: 100%;
+    justify-content: center;
+  }
+  .gis-text{
+    text-align: left;
   }
 
 }
