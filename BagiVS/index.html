@@ -6,7 +6,10 @@
   <title>Bakdaulet Kozhantay — Frontend Developer</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 </head>
 <body>
 
@@ -39,24 +42,55 @@
           </div>
         </div>
 
-        <div class="hero__right" data-aos="fade-up" data-aos-delay="120">
-          <div class="card">
-            <h3>Quick info</h3>
-            <ul>
-              <li>React (скоро подключим)</li>
-              <li>HTML • CSS • JavaScript</li>
-              <li>Город: Алматы</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+            <div class="card quick">
+              <div class="quick__top">
+                <img class="avatar" src="./img/WhatsApp Image 2026-01-23 at 17.12.36.jpeg" alt="Bakdaulet Kozhantay" />
+                <div>
+                  <h3>Bakdaulet</h3>
+                  <p class="muted">Frontend Developer (Junior)</p>
+                </div>
+              </div>
+
+              <ul class="quick__list">
+                <li>React (в процессе)</li>
+                <li>HTML • CSS • JavaScript</li>
+                <li>Город: Алматы</li>
+              </ul>
+            </div>
+
+
+              <div class="quick__actions">
+                <a
+                  class="btn"
+                  href="./PDF/Кожантай Бакдаулет Шерханович.pdf"
+                  download
+                >
+                  Скачать Резюме
+                </a>
+              </div>
+
+              <div class="contact-phone">
+                <span class="muted">Телефон:</span>
+
+                <span id="phoneNumber">+7 747 744 34 25</span>
+
+                <button class="copy-btn" id="copyPhoneBtn" aria-label="Copy phone number">
+                  Скопировать
+                </button>
+              </div>
+
+              
+              
+
     </section>
 
     <section class="section" id="projects" data-aos="fade-up">
       <div class="grid">
 
   <div class="card project" data-aos="zoom-in" data-aos-delay="0">
-    <div class="thumb"></div>
+    <div class="thumb">
+  <img src="./img/burger.png" alt="Burger landing preview">
+</div>
     <h3>BurgerLanding</h3>
     <p class="muted">Лендинг бургерной с акцентом на UI и визуал.
   Flexbox, адаптив, интерактивные элементы.</p>
@@ -71,7 +105,9 @@
   </div>
 
   <div class="card project" data-aos="zoom-in" data-aos-delay="120">
-    <div class="thumb"></div>
+    <div class="thumb">
+  <img src="./img/Screenshot_237.png" alt="Burger landing preview">
+</div>
     <h3>YrysAuToGas</h3>
     <p class="muted">Корпоративный лендинг для автогазовой компании.
   Адаптивная верстка, чистая структура, базовый JavaScript.</p>
@@ -86,7 +122,9 @@
   </div>
 
   <div class="card project" data-aos="zoom-in" data-aos-delay="240">
-    <div class="thumb"></div>
+    <div class="thumb">
+  <img src="./img/brown.png" alt="Burger landing preview">
+</div>
     <h3>StarBuks</h3>
     <p class="muted">Учебный лендинг в стиле Starbucks.
   Практика верстки, компонентов и аккуратного CSS.</p>
@@ -132,12 +170,49 @@
     <section class="section" id="contact" data-aos="fade-up">
       <div class="container">
         <h2>Contact</h2>
+        <p class="muted">Свяжись со мной удобным способом</p>
+
+<div class="contact-socials">
+  <a href="https://www.instagram.com/brine.occonor?igsh=YnpwamNlZHp3ZHVt&utm_source=ig_contact_invite"
+   target="_blank"
+   aria-label="Instagram">
+    <i class="fa-brands fa-instagram" title="Instagram"></i>
+  </a>
+
+<a href="https://www.tiktok.com/@bakow.97?_r=1&_t=ZS-93JONpDXVEA"
+   target="_blank"
+   aria-label="TikTok">
+    <i class="fa-brands fa-tiktok" title="TikTok"></i>
+  </a>
+
+  <a href="mailto:mr.baha_1995@mail.ru"
+     aria-label="Email" title="Email"> 
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+ <a class="whatsapp" href="https://wa.me/77477443425"
+      target="_blank" rel="noopener noreferrer" 
+      aria-label="WhatsApp" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+</div>
         <div class="card pad">
           <p class="muted">Сюда позже вставим твои реальные ссылки.</p>
           <div class="buttons">
             <a class="btn" href="mailto:mr.baha_1995@mail.ru">Email</a>
-            <a class="btn btn-ghost" href="#">Telegram</a>
-            <a class="btn btn-ghost" href="#">GitHub</a>
+           
+            <a class="btn btn-ghost"
+                    href="https://t.me/Bakdaulet1997"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Telegram
+            </a>
+            <a class="btn btn-ghost" 
+            href="https://bakdauletkozhantay.github.io/Mentory-Student/" 
+            target="_blank"
+            rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
       </div>
@@ -147,7 +222,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="muted">© 2026 Bakdaulet Kozhantay</p>
+      <p class="muted">© 2026 Bakdaulet Kozhantay +77477443425</p>
     </div>
   </footer>
 

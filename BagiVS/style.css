@@ -69,6 +69,45 @@ body {
   cursor: pointer;
 }
 
+/* Quick */
+.quick {
+  padding: 16px;
+}
+
+.quick__top {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.quick__actions {
+  margin-top: 14px;
+}
+
+.quick__actions .btn {
+  width: 100%;
+  justify-content: center;
+  background: linear-gradient(135deg, #7c5cff, #5a46ff);
+}
+
+.avatar {
+  width: 75px;
+  height: 88px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+
+}
+.quick__list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.quick__list li { margin: 6px 0; }
+
+
 /* Hero */
 .hero { padding: 64px 0 18px; }
 
@@ -158,14 +197,27 @@ h1 {
 }
 
 .thumb {
-  height: 100px;
+  height: 160px;
   border-radius: 14px;
+  overflow: hidden;
   border: 1px solid var(--border);
-  background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(34,197,94,.18));
+  background: #111;
 }
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* ключевая строка */
+  transition: transform .4s ease;
+}
+
 
 .project h3 { margin: 6px 0 4px; }
 .project p { font-size: 14px; line-height: 1.4; }
+
+.project:hover .thumb img {
+  transform: scale(1.05);
+}
 
 .buttons {
   display: flex;
@@ -193,6 +245,19 @@ h1 {
   color: var(--text);
 }
 
+.btn, .btn-ghost, .copy-btn, .contact-socials a {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+
+.btn:hover, .btn-ghost:hover, .copy-btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:hover {
+  box-shadow: 0 12px 30px rgba(124,92,255,.35);
+}
+
+
 /* Skills */
 .chips {
   display: flex;
@@ -208,6 +273,96 @@ h1 {
   background: var(--panel);
   font-weight: 600;
 }
+
+/* Contacts */
+
+.contact-socials {
+  margin-top: 16px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 18px; 
+}
+
+.contact-socials a {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(124,92,255,.12);   /* акцентный фон */
+  border: 1px solid rgba(124,92,255,.35);
+
+  color: var(--accent);               /* фиолетовый */
+  font-size: 22px;
+
+  transition: transform .2s ease,
+              background .2s ease,
+              color .2s ease,
+              box-shadow .2s ease;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+#contact .muted {
+  margin-bottom: 12px;
+}
+
+.contact-socials a:hover {
+  transform: translateY(-3px);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(124,92,255,.45);
+}
+
+.contact-socials a.whatsapp {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: rgba(37, 211, 102, 0.35);
+  color: #25d366;
+}
+
+.contact-socials a.whatsapp:hover {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+}
+
+
+.contact-phone {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#phoneNumber {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.copy-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+
 
 /* Footer */
 .footer {
