@@ -32,6 +32,47 @@
   </div>
 </section>
 
+  <section id="certs" class="certs" data-aos="fade-up">
+
+    <div class="container">
+      <h2 class="section__title">Сертификаты и документы</h2>
+      <p class="certs__desc">Работаем официально. Сертифицированное оборудование и гарантия качества.</p>
+      
+      <div class="certs__grid">
+        <button class="cert-card" type="button" data-img="img/sertificates/Sert1.jpeg" data-title="Сертификат №1">
+          <img src="./img/sertificates/Sert1.jpeg" alt="Сертификат №1">
+          <span class="cert-card__label">Сертификат №1</span>
+        </button>
+
+        <button class="cert-card" type="button" data-img="img/sertificates/Sert2.jpeg" data-title="Сертификат №2">
+          <img src="./img/sertificates/Sert2.jpeg" alt="Сертификат №2">
+          <span class="cert-card__label">Сертификат №2</span>
+        </button>
+
+        <button class="cert-card" type="button" data-img="img/sertificates/Sert3.jpeg" data-title="Сертификат №3">
+          <img src="./img/sertificates/Sert3.jpeg" alt="Сертификат №3">
+          <span class="cert-card__label">Сертификат №3</span>
+        </button>
+
+        <button class="cert-card" type="button" data-img="img/sertificates/Sert4.jpeg" data-title="Сертификат №4">
+          <img src="./img/sertificates/Sert4.jpeg" alt="Сертификат №4">
+          <span class="cert-card__label">Сертификат №4</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модалка (увеличение картинки) -->
+   <div class="modal" id="certModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+
+    <div class="modal__content" role="dialog" aria-modal="true" aria-label="Просмотр сертификата">
+      <button class="modal__close" type="button" data-close="true" aria-label="Закрыть">✕</button>
+      <h3 class="modal__title" id="certModalTitle"></h3>
+      <img class="modal__img" id="certModalImg" alt="" >
+    </div>
+   </div>
+
 <section id="services" class="services">
   <div class="container">
     <h2 class="section__title" data-aos="fade-up">Наши услуги</h2>
