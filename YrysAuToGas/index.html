@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,202 +8,229 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="container header__container">
-    <h1 class="header__logo">YrysAutoGas</h1>
-    <nav class="header__nav">
-      <ul class="header__list">
-        <li><a href="#home" class="active">Главная</a></li>
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#about">О компании</a></li>
-        <li><a href="#contacts">Контакты</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header class="header">
+    <div class="container header__container">
+      <h1 class="header__logo">YrysAutoGas</h1>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li><a href="#home" class="active">Главная</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#about">О компании</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        
+      </nav>
+      <button class="theme-btn" id="button" aria-label="Сменить тему">
+          🌙
+        </button>
+    </div>
+  </header>
 
-<section id="home" class="hero" data-aos="fade-up">
-  <div class="container hero__container">
-    <h2 class="hero__title">Установка автогаза за 1 день</h2>
-    <p class="hero__desc">Профессиональная установка и обслуживание ГБО для вашего автомобиля</p>
-    <a href="#booking" class="btn">Записаться</a>
-  </div>
-</section>
+  <section id="home" class="hero" data-aos="fade-up">
+    <div class="container hero__container">
+      <h2 class="hero__title">Установка автогаза за 1 день</h2>
+      <p class="hero__desc">Профессиональная установка и обслуживание ГБО для вашего автомобиля</p>
+      <a href="#booking" class="btn">Записаться</a>
+    </div>
+  </section>
 
   <section id="certs" class="certs" data-aos="fade-up">
 
     <div class="container">
       <h2 class="section__title">Сертификаты и документы</h2>
       <p class="certs__desc">Работаем официально. Сертифицированное оборудование и гарантия качества.</p>
-      
+
       <div class="certs__grid">
         <button class="cert-card" type="button" data-img="img/sertificates/Sert1.jpeg" data-title="Сертификат №1">
           <img src="./img/sertificates/Sert1.jpeg" alt="Сертификат №1">
           <span class="cert-card__label">Сертификат №1</span>
+          <span class="cert-card__sub">Официальный документ</span>
         </button>
 
         <button class="cert-card" type="button" data-img="img/sertificates/Sert2.jpeg" data-title="Сертификат №2">
           <img src="./img/sertificates/Sert2.jpeg" alt="Сертификат №2">
           <span class="cert-card__label">Сертификат №2</span>
+          <span class="cert-card__sub">Официальный документ</span>
         </button>
 
         <button class="cert-card" type="button" data-img="img/sertificates/Sert3.jpeg" data-title="Сертификат №3">
           <img src="./img/sertificates/Sert3.jpeg" alt="Сертификат №3">
           <span class="cert-card__label">Сертификат №3</span>
+          <span class="cert-card__sub">Официальный документ</span>
         </button>
 
         <button class="cert-card" type="button" data-img="img/sertificates/Sert4.jpeg" data-title="Сертификат №4">
           <img src="./img/sertificates/Sert4.jpeg" alt="Сертификат №4">
           <span class="cert-card__label">Сертификат №4</span>
+          <span class="cert-card__sub">Официальный документ</span>
         </button>
       </div>
     </div>
   </section>
 
   <!-- Модалка (увеличение картинки) -->
-   <div class="modal" id="certModal" aria-hidden="true">
+  <div class="modal" id="certModal" aria-hidden="true">
     <div class="modal__backdrop" data-close="true"></div>
 
     <div class="modal__content" role="dialog" aria-modal="true" aria-label="Просмотр сертификата">
       <button class="modal__close" type="button" data-close="true" aria-label="Закрыть">✕</button>
       <h3 class="modal__title" id="certModalTitle"></h3>
-      <img class="modal__img" id="certModalImg" alt="" >
-    </div>
-   </div>
-
-<section id="services" class="services">
-  <div class="container">
-    <h2 class="section__title" data-aos="fade-up">Наши услуги</h2>
-    <div class="services__grid">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>Установка ГБО</h3>
-        <p>Профессиональная установка газового оборудования на любые автомобили.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>Обслуживание</h3>
-        <p>Регулярное техобслуживание и проверка системы ГБО для безопасной эксплуатации.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <h3>Ремонт</h3>
-        <p>Ремонт и замена деталей ГБО с гарантией качества.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <h3>Печка</h3>
-        <p>Чистка печки без разбора с гарантией.</p>
-      </div>
+      <img class="modal__img" id="certModalImg" alt="">
     </div>
   </div>
-</section>
 
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section__title" data-aos="fade-up">Наши услуги</h2>
+      <div class="services__grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card__top">
+            <span class="service-card__icon">⛽</span>
+            <h3>Установка ГБО</h3>
+          </div>
+          <p>Профессиональная установка газового оборудования на любые автомобили.</p>
+          <a class="service-card__link" href="#booking">Записаться →</a>
+        </div>
 
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card__top">
+            <span class="service-card__icon">🛠️</span>
+            <h3>Обслуживание</h3>
+          </div>
+          <p>Регулярное техобслуживание и проверка системы ГБО для безопасной эксплуатации.</p>
+          <a class="service-card__link" href="#booking">Записаться →</a>
+        </div>
 
-<section id="about" class="about" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section__title">О компании</h2>
-    <p>Мы работаем с 2023 года и установили ГБО более чем 500 автомобилям. Профессиональные мастера,
-         сертифицированное оборудование и гарантия качества на все работы.</p>
-    <a class="btn-2gis-line"
-   href="https://go.2gis.com/AOgAE"
-   target="_blank"
-   rel="noopener noreferrer">
-  
-  <span class="gis-logo" aria-hidden="true">
-    <!-- Лёгкий SVG-логотип (стилизованный под 2ГИС) -->
-    <svg viewBox="0 0 64 64">
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#22c55e"/>
-          <stop offset="1" stop-color="#16a34a"/>
-        </linearGradient>
-      </defs>
-      <circle cx="32" cy="32" r="30" fill="url(#g)"/>
-      <path d="M18 38c0-8 6-14 14-14h14v20H32c-8 0-14-6-14-14z" fill="#fff" opacity="0.95"/>
-      <path d="M28 24c0-3 2.5-5.5 5.5-5.5S39 21 39 24s-2.5 5.5-5.5 5.5S28 27 28 24z" fill="#16a34a"/>
-    </svg>
-  </span>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card__top">
+            <span class="service-card__icon">🔧</span>
+            <h3>Ремонт</h3>
+          </div>
+          <p>Ремонт и замена деталей ГБО с гарантией качества.</p>
+          <a class="service-card__link" href="#booking">Записаться →</a>
+        </div>
 
-  <span class="gis-text">
-    <strong>2ГИС</strong>
-    <span class="gis-sub">г. Шымкент, ул. Алпысбаева, 110</span>
-  </span>
-</a>
-          <div class="about__actions">
-                <a class="wa-inline"
-                  href="https://wa.me/77770969550?text=Здравствуйте!%20Хочу%20записаться%20на%20установку%20ГБО"
-                  target="_blank">
-                  <span class="wa-inline__icon">💬</span>
-                  Написать в WhatsApp
-                </a>
-            </div>
-  </div>
-</section>
-
-<section id="contacts" class="contacts" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section__title">Контакты</h2>
-    <p>Телефон: +7 777 096 95 50</p>
-    <p>Email: info@autogas.kz</p>
-    <p>Адрес: ​г.Шымкент улица Алпысбаева, 110</p>
-  </div>
-  
-</section>
-
-
-<section id="booking" class="booking" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section__title">Записаться на установку</h2>
-
-    <form class="booking__form" action="https://formsubmit.co/mr.baha_1995@mail.ru" method="POST">
-      <input type="hidden" name="_subject" value="Новая заявка с сайта YrysAutoGas">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="http://127.0.0.1:5500/YrysAuToGas/thanks.html">
-
-      <div class="input-icon user">
-        <input type="text" name="name" placeholder="Ваше имя" required>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-card__top">
+            <span class="service-card__icon">🔥</span>
+            <h3>Печка</h3>
+          </div>
+          <p>Чистка печки без разбора с гарантией.</p>
+          <a class="service-card__link" href="#booking">Записаться →</a>
+        </div>
       </div>
+    </div>
+    </div>
+  </section>
 
-      <div class="input-icon phone">
-        <input type="tel" name="phone" placeholder="Телефон" required>
+
+
+  <section id="about" class="about" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section__title">О компании</h2>
+      <p>Мы работаем с 2023 года и установили ГБО более чем 500 автомобилям. Профессиональные мастера,
+        сертифицированное оборудование и гарантия качества на все работы.</p>
+      <a class="btn-2gis-line" href="https://go.2gis.com/AOgAE" target="_blank" rel="noopener noreferrer">
+
+        <span class="gis-logo" aria-hidden="true">
+          <!-- Лёгкий SVG-логотип (стилизованный под 2ГИС) -->
+          <svg viewBox="0 0 64 64">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#22c55e" />
+                <stop offset="1" stop-color="#16a34a" />
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="30" fill="url(#g)" />
+            <path d="M18 38c0-8 6-14 14-14h14v20H32c-8 0-14-6-14-14z" fill="#fff" opacity="0.95" />
+            <path d="M28 24c0-3 2.5-5.5 5.5-5.5S39 21 39 24s-2.5 5.5-5.5 5.5S28 27 28 24z" fill="#16a34a" />
+          </svg>
+        </span>
+
+        <span class="gis-text">
+          <strong>2ГИС</strong>
+          <span class="gis-sub">г. Шымкент, ул. Алпысбаева, 110</span>
+        </span>
+      </a>
+      <div class="about__actions">
+        <a class="wa-inline"
+          href="https://wa.me/77770969550?text=Здравствуйте!%20Хочу%20записаться%20на%20установку%20ГБО"
+          target="_blank">
+          <span class="wa-inline__icon">💬</span>
+          Написать в WhatsApp
+        </a>
       </div>
+    </div>
+  </section>
 
-      <div class="input-icon car">
-        <input type="text" name="car" placeholder="Марка автомобиля" required>
-      </div>
+  <section id="contacts" class="contacts" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section__title">Контакты</h2>
+      <p>Телефон: +7 777 096 95 50</p>
+      <p>Email: info@autogas.kz</p>
+      <p>Адрес: ​г.Шымкент улица Алпысбаева, 110</p>
+    </div>
 
-      <div class="input-icon model">
-        <input type="text" name="model" placeholder="Модель авто" required>
-      </div>
-
-      <div class="input-icon year">
-        <input type="text" name="year" placeholder="Год авто" required>
-      </div>
-
-      <button type="submit" class="btn">Записаться</button>
-    </form>
-  </div>
-</section>
+  </section>
 
 
+  <section id="booking" class="booking" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section__title">Записаться на установку</h2>
+
+      <form class="booking__form" action="https://formsubmit.co/mr.baha_1995@mail.ru" method="POST">
+        <input type="hidden" name="_subject" value="Новая заявка с сайта YrysAutoGas">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/YrysAuToGas/thanks.html">
+
+        <div class="input-icon user">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+        </div>
+
+        <div class="input-icon phone">
+          <input type="tel" name="phone" placeholder="Телефон" required>
+        </div>
+
+        <div class="input-icon car">
+          <input type="text" name="car" placeholder="Марка автомобиля" required>
+        </div>
+
+        <div class="input-icon model">
+          <input type="text" name="model" placeholder="Модель авто" required>
+        </div>
+
+        <div class="input-icon year">
+          <input type="text" name="year" placeholder="Год авто" required>
+        </div>
+
+        <button type="submit" class="btn">Записаться</button>
+      </form>
+    </div>
+  </section>
 
 
 
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2026 YrysAutoGas. Все права защищены.</p>
-  </div>
-</footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: true });
-</script>
 
-<script src="./script.js">
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 YrysAutoGas. Все права защищены.</p>
+    </div>
+  </footer>
 
-</script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <script src="./script.js">
+
+  </script>
 
 </body>
+
 </html>
