@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEAT — магазин мяса</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="logo" href="#top">MEAT</a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="#about">О магазине</a>
+        <a class="nav__link" href="#catalog">Каталог</a>
+        <a class="nav__link" href="#delivery">Доставка</a>
+        <a class="nav__link" href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1>Свежое мясо с доставкой</h1>
+        <p>Выбирай стейки, фарш, мясо и полуфабрикаты — привезём по вашему адресу.</p>
+        <a class="btn" href="#catalog">Перейти в каталог</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>О магазине</h2>
+        <p>MEAT — мясная лавка с отборной продукцией и быстрой доставкой по городу.</p>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <h2>Каталог</h2>
+
+        <ul class="products" aria-label="Список товаров">
+          <li>
+            <article class="product">
+              <h3>Говядина (стейк рибай)</h3>
+              <p>Цена: 4 500 ₸ / 500 г</p>
+              <p>Мраморная говядина, отлично для гриля.</p>
+
+              <p class="status status--available">В наличии</p>
+
+              <button type="button">В корзину</button>
+            </article>
+          </li>
+
+          <li>
+            <article class="product">
+              <h3>Баранина (корейка)</h3>
+              <p>Цена: 4 200 ₸ / 500 г</p>
+              <p>Нежная корейка для запекания.</p>
+
+             <p class="status status--unavailable">Нет в наличии</p>
+
+              <button type="button" disabled>В корзину</button>
+            </article>
+          </li>
+
+          <li>
+            <article class="product">
+              <h3>Куриное филе</h3>
+              <p>Цена: 1 600 ₸ / 1 кг</p>
+              <p>Постное филе, идеально для салатов и жарки.</p>
+              <button type="button">В корзину</button>
+            </article>
+          </li>
+
+          <li>
+            <article class="product">
+              <h3>Фарш говяжий</h3>
+              <p>Цена: 2 300 ₸ / 1 кг</p>
+              <p>Свежий фарш, подходит для котлет и бургеров.</p>
+              <button type="button">В корзину</button>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="delivery">
+      <div class="container">
+        <h2>Доставка</h2>
+        <ul>
+          <li>По городу — 60–90 минут</li>
+          <li>Бесплатно от 10 000 ₸</li>
+          <li>Оплата: наличные / карта</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container">
+        <h2>Контакты</h2>
+        <p>Телефон: <a href="tel:+77000000000">+7 (700) 000-00-00</a></p>
+        <p>Адрес: г. Алматы, ул. Примерная, 10</p>
+
+        <h3>Оставить заявку</h3>
+        <form action="#" method="post">
+          <div>
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+
+          <div>
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+
+          <div>
+            <label for="comment">Комментарий</label>
+            <textarea id="comment" name="comment" rows="4"></textarea>
+          </div>
+
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© 2026 MEAT. Режим работы: 09:00–21:00</small>
+    </div>
+  </footer>
+</body>
+</html>
