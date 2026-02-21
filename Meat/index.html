@@ -10,14 +10,17 @@
 <body>
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="logo" href="#top">MEAT</a>
+      <a class="logo" href="./img/logo.jpeg">MEAT</a>
 
       <nav class="nav" aria-label="Основная навигация">
         <a class="nav__link" href="#about">О магазине</a>
         <a class="nav__link" href="#catalog">Каталог</a>
-        <a class="nav__link" href="#delivery">Доставка</a>
+        <!-- <a class="nav__link" href="#delivery">Доставка</a> -->
         <a class="nav__link" href="#contacts">Контакты</a>
       </nav>
+      <a class="cart-link" href="#cart" aria-label="Открыть корзину">
+      🛒 Корзина: <span id="cartCount">0</span> / <span id="cartTotal">0</span> ₸
+    </a>
     </div>
   </header>
 
@@ -25,7 +28,7 @@
     <section class="hero">
       <div class="container">
         <h1>Свежое мясо с доставкой</h1>
-        <p>Выбирай стейки, фарш, мясо и полуфабрикаты — привезём по вашему адресу.</p>
+        <p>Выбирай стейки, фарш, мясо и полуфабрикаты — есть доставка через яндекс.</p>
         <a class="btn" href="#catalog">Перейти в каталог</a>
       </div>
     </section>
@@ -33,7 +36,7 @@
     <section class="section" id="about">
       <div class="container">
         <h2>О магазине</h2>
-        <p>MEAT — мясная лавка с отборной продукцией и быстрой доставкой по городу.</p>
+        <p>MEAT — мясная лавка с отборной продукцией и быстрой доставкой по городу через яндекс.</p>
       </div>
     </section>
 
@@ -41,59 +44,195 @@
       <div class="container">
         <h2>Каталог</h2>
 
-        <ul class="products" aria-label="Список товаров">
-          <li>
-            <article class="product">
-              <h3>Говядина (стейк рибай)</h3>
-              <p>Цена: 4 500 ₸ / 500 г</p>
-              <p>Мраморная говядина, отлично для гриля.</p>
+        <!-- Табы -->
+        <div class="catalog-tabs" role="tablist" aria-label="Категории мяса">
+          <button class="tab is-active" type="button" role="tab"
+            aria-selected="true" aria-controls="panel-beef" data-category="beef">Говядина</button>
 
-              <p class="status status--available">В наличии</p>
+          <button class="tab" type="button" role="tab"
+            aria-selected="false" aria-controls="panel-horse" data-category="horse">Конина</button>
 
-              <button type="button">В корзину</button>
-            </article>
-          </li>
+          <button class="tab" type="button" role="tab"
+            aria-selected="false" aria-controls="panel-lamb" data-category="lamb">Баранина</button>
+        </div>
 
-          <li>
-            <article class="product">
-              <h3>Баранина (корейка)</h3>
-              <p>Цена: 4 200 ₸ / 500 г</p>
-              <p>Нежная корейка для запекания.</p>
+        <div class="catalog-controls">
+          <label class="control">
+            <span>Поиск</span>
+            <input id="searchInput" type="search" placeholder="Например: фарш, ребра, казы..." />
+          </label>
 
-             <p class="status status--unavailable">Нет в наличии</p>
+          <label class="control control--check">
+            <input type="checkbox" id="inStockOnly">
+            <span>Только в наличии</span>
+          </label>
 
-              <button type="button" disabled>В корзину</button>
-            </article>
-          </li>
+          <button id="clearFilters" type="button">Сброс</button>
+        </div>
 
-          <li>
-            <article class="product">
-              <h3>Куриное филе</h3>
-              <p>Цена: 1 600 ₸ / 1 кг</p>
-              <p>Постное филе, идеально для салатов и жарки.</p>
-              <button type="button">В корзину</button>
-            </article>
-          </li>
+        <!-- Говядина -->
+        <section class="catalog-group" id="panel-beef" role="tabpanel" data-category="beef" aria-labelledby="beef-title">
+          <h3 class="catalog-group__title" id="beef-title">Говядина</h3>
 
-          <li>
-            <article class="product">
-              <h3>Фарш говяжий</h3>
-              <p>Цена: 2 300 ₸ / 1 кг</p>
-              <p>Свежий фарш, подходит для котлет и бургеров.</p>
-              <button type="button">В корзину</button>
-            </article>
-          </li>
-        </ul>
+          <ul class="products" aria-label="Список товаров: говядина">
+            <li>
+              <article class="product" data-id="beef_back">
+                <h4>Мякоть задняя часть</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Мраморная говядина, отлично для гриля.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product product--unavailable" data-id="beef_front">
+                <h4>Мякоть передняя часть</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Нежная часть для запекания.</p>
+                <p class="status status--unavailable">Нет в наличии</p>
+                <button class="product__btn" type="button" disabled>В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="beef_bone">
+                <h4>Передняя часть с костями</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Отлично для бульона и тушения.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="beef_brisket">
+                <h4>Грудинка</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Для тушения и запекания.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="beef_ribs">
+                <h4>Рёбрышки</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Идеально для гриля.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="beef_mince">
+                <h4>Фарш</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Для котлет и бургеров.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Конина -->
+        <section class="catalog-group is-hidden" id="panel-horse" role="tabpanel" data-category="horse" aria-labelledby="horse-title">
+          <h3 class="catalog-group__title" id="horse-title">Конина</h3>
+
+          <ul class="products" aria-label="Список товаров: конина">
+            <li>
+              <article class="product" data-id="horse_zhaya">
+                <h4>Жая</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Отлично для нарезки и подачи.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="horse_bone">
+                <h4>Передняя часть с костями</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Для бульона и тушения.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="horse_kazy">
+                <h4>Казы</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Традиционная колбаса.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Баранина -->
+        <section class="catalog-group is-hidden" id="panel-lamb" role="tabpanel" data-category="lamb" aria-labelledby="lamb-title">
+          <h3 class="catalog-group__title" id="lamb-title">Баранина</h3>
+
+          <ul class="products" aria-label="Список товаров: баранина">
+            <li>
+              <article class="product" data-id="lamb_front">
+                <h4>Передняя часть</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Для тушения.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="lamb_back">
+                <h4>Задняя часть</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Для запекания.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="lamb_ribs">
+                <h4>Рёбра</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Для гриля и духовки.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+
+            <li>
+              <article class="product" data-id="lamb_kurdyuk">
+                <h4>Курдюк</h4>
+                <p class="product__price">Цена: <span class="price"></span> ₸/кг</p>
+                <p class="product__desc">Для плова и жарки.</p>
+                <p class="status status--available">В наличии</p>
+                <button class="product__btn" type="button">В корзину</button>
+              </article>
+            </li>
+          </ul>
+        </section>
       </div>
     </section>
 
     <section class="section" id="delivery">
       <div class="container">
-        <h2>Доставка</h2>
+        <h2>Доставка по яндекс</h2>
         <ul>
           <li>По городу — 60–90 минут</li>
-          <li>Бесплатно от 10 000 ₸</li>
+          <li>Вызываете яндекс такси либо мы можем вызвать, и отправить на Ваш адрес 
+            за доставку оплачиваете самому водителю
+          </li>
           <li>Оплата: наличные / карта</li>
+          <li>Удаленная оплата по каспи</li>
         </ul>
       </div>
     </section>
@@ -127,10 +266,78 @@
     </section>
   </main>
 
+  <section class="section" id="cart">
+  <div class="container">
+    <h2>Корзина</h2>
+
+    <div id="cartEmpty">Корзина пуста.</div>
+
+    <ul id="cartList" class="cart-list" aria-label="Список товаров в корзине"></ul>
+
+    <form id="checkoutForm" class="checkout" autocomplete="on">
+  <h3>Оформление заказа</h3>
+
+  <div class="checkout__grid">
+    <label class="checkout__field">
+      <span>Имя</span>
+      <input id="custName" name="name" type="text" required />
+    </label>
+
+    <label class="checkout__field">
+      <span>Телефон</span>
+      <input id="custPhone" name="phone" type="tel" inputmode="tel" placeholder="+7 7xx xxx xx xx" required />
+    </label>
+
+    <label class="checkout__field checkout__field--full">
+      <span>Адрес доставки</span>
+      <input id="custAddress" name="address" type="text" required />
+    </label>
+
+    <label class="checkout__field">
+      <span>Оплата</span>
+      <select id="payMethod" name="payMethod" required>
+        <option value="card">Карта</option>
+        <option value="cash">Наличные</option>
+      </select>
+    </label>
+
+    <label class="checkout__field">
+      <span>Когда доставить</span>
+      <select id="deliveryTime" name="deliveryTime" required>
+        <option value="asap">Как можно скорее</option>
+        <option value="today">Сегодня</option>
+        <option value="tomorrow">Завтра</option>
+      </select>
+    </label>
+
+    <label class="checkout__field checkout__field--full">
+      <span>Комментарий</span>
+      <textarea id="custComment" name="comment" rows="3" placeholder="Например: домофон 12, подъезд 2"></textarea>
+    </label>
+  </div>
+
+  <div class="checkout__actions">
+    <button id="placeOrder" type="submit">Оформить заказ</button>
+    <button id="copyOrder" type="button">Скопировать заказ</button>
+    <a id="waOrder" class="btn-link" href="#" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+  </div>
+
+  <p id="checkoutHint" class="checkout__hint"></p>
+</form>
+
+  <div id="orderResult" class="order-result is-hidden" aria-live="polite" ></div>
+    <div class="cart-actions">
+      <button id="cartClear" type="button">Очистить корзину</button>
+    </div>
+  </div>
+</section>
+
   <footer class="footer">
     <div class="container">
       <small>© 2026 MEAT. Режим работы: 09:00–21:00</small>
     </div>
   </footer>
-</body>
+
+  <script type="module" src="./js/main.js"></script>
+  </body>
 </html>
